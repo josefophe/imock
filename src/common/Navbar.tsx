@@ -2,7 +2,7 @@ import { Box, Divider, Flex, Heading, Link } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useAuth } from '../lib/auth';
-import { link } from 'next/link';
+// import { Link } from 'next/link';
 import { image } from 'next/image';
 
 const Navbar: React.FC<{}> = () => {
