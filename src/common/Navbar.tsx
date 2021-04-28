@@ -18,7 +18,7 @@ const Navbar: React.FC<{}> = () => {
 	<nav>
 
 
-      <Link href="https:tonwallet.me/"><a>Create a TON Wallet</a></Link>
+      <Link href="https://tonwallet.me/"><a>Create a TON Wallet</a></Link>
 
   	<Box p={2}>
               <Link
