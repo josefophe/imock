@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { useAuth } from '../lib/auth';
 // import { Link } from 'next/link';
-import { image } from 'next/image';
+// import { image } from 'next/image';
 
 const Navbar: React.FC<{}> = () => {
   const { auth, signOut } = useAuth();
@@ -16,9 +16,8 @@ const Navbar: React.FC<{}> = () => {
           iMockApp
         </Heading>
 	<nav>
-      <div className="logo">
-        <image src="/public/logo.png" alt="site logo" width={128} height={77} />
-      </div>
+
+
       <Link href="https:tonwallet.me/"><a>Create a TON Wallet</a></Link>
 
   	<Box p={2}>
