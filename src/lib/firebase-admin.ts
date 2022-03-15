@@ -1,4 +1,5 @@
 import admin from 'firebase-admin';
+import { useAuth } from './auth-near';
 
 if (!admin.apps.length) {
   admin.initializeApp({
@@ -12,6 +13,6 @@ if (!admin.apps.length) {
 }
 
 const db = admin.firestore();
-const auth = admin.auth();
+const isAuth = useAuth();
 
-export { db, auth };
+export { db, isAuth };

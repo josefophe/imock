@@ -3,13 +3,13 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import Navbar from '../common/Navbar';
-import { useAuth } from '../lib/auth';
+import { useAuth } from '../lib/auth-near';
 
 const signin = () => {
-  const { auth, siginWithGoogle } = useAuth();
+  const { isAuth, login } = useAuth();
   const router = useRouter();
 
-  if (auth) {
+  if (isAuth) {
     router.push((router.query.next as string) || '/');
   }
 
@@ -22,8 +22,8 @@ const signin = () => {
             <Heading fontSize="3xl" mb={2}>
               Hello, Welcome to the iMock App!!
             </Heading>
-            <Button leftIcon={<FcGoogle />} onClick={() => siginWithGoogle()}>
-              Sign In with Google
+            <Button  onClick={() => login()}>
+            Ⓝ  Sign In with Near
             </Button>
           </VStack>
         </Center>

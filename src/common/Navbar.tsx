@@ -1,12 +1,14 @@
 import { Box, Divider, Flex, Heading, Link } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { useAuth } from '../lib/auth';
+// import { useAuth } from '../lib/auth';
+import { useAuth } from "../lib/auth-near";
+
 // import { Link } from 'next/link';
 // import { image } from 'next/image';
 
 const Navbar: React.FC<{}> = () => {
-  const { auth, signOut } = useAuth();
+  const { isAuth, logout } = useAuth();
   const router = useRouter();
 
   return (
@@ -15,23 +17,8 @@ const Navbar: React.FC<{}> = () => {
         <Heading onClick={() => router.push('/')} as="button">
           iMockApp
         </Heading>
-	<nav>
-
-
-      <Link href="https://tonwallet.me/"><a>Create a TON Wallet</a></Link>
-
-  	<Box p={2}>
-              <Link
-                p={2}
-                onClick={() => router.push('https://t.me/iMockBot/')}
-              >
-                Buy/Request TON
-              </Link>
-            </Box>
-
-      </nav>
         <Box>
-          {auth ? (
+          {isAuth ? (
             <Box p={2}>
               <Link
                 p={2}
@@ -42,7 +29,7 @@ const Navbar: React.FC<{}> = () => {
               >
                 Add new quiz
               </Link>
-              <Link p={2} onClick={() => signOut()}>
+              <Link p={2} onClick={() => logout()}>
                 Logout
               </Link>
             </Box>
