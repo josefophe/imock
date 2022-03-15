@@ -84,7 +84,7 @@ const AuthProvider = ({ children }) => {
     if (!walletConnection) {
       return;
     }
-    walletConnection.requestSignIn(contractName ?? nearConfig.contractName, "B-Event App");
+    walletConnection.requestSignIn(contractName ?? nearConfig.contractName, "iMock App");
     // walletConnection.requestSignIn({
     //   contractId: nearConfig.contractName,
     //   successUrl: `${process.env.domain}/user-dashboard`,
